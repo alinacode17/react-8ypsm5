@@ -59,7 +59,7 @@ function Map(props) {
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
           center={center}
-          zoom={13}
+          zoom={11}
         >
           {props.locations.map((location, index) => (
             <Marker

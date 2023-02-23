@@ -38,6 +38,10 @@ function Map(props) {
     console.log('marker: ', marker);
   };
 
+  const mapOptions = {
+    mapTypeId: 'satellite',
+  };
+
   const markerIcon = {
     url: '',
     backgroundColor: 'pink',
@@ -69,6 +73,7 @@ function Map(props) {
                 lat: Number(location.latitude),
                 lng: Number(location.longitude),
               }}
+              options={mapOptions}
             ></Marker>
           ))}
         </GoogleMap>

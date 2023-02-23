@@ -9,7 +9,7 @@ const Calendar = (props) => {
   );
   const [selectedDate, setSelectedDate] = useState(null);
 
-  //test 2
+  //test icon
 
   useEffect(() => {
     setCurrentWeek(

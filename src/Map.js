@@ -180,15 +180,28 @@ const lightTheme = [
 ];
 
 function Map(props) {
+  const [center, setCenter] = useState({ lat: 51.5072178, lng: -0.1275862 });
+  const [zoom, setZoom] = useState(12);
+
   const mapContainerStyle = {
     width: '600px',
     height: '500px',
   };
 
   // getting center as our usual lot and lon
-  const center = {
-    lat: 51.5072178,
-    lng: -0.1275862,
+  // const center = {
+  //   lat: 51.5072178,
+  //   lng: -0.1275862,
+  // };
+
+  const handleCenter = () => {
+    setCenter({ lat: 51.6429219, lng: -0.3144919 });
+    setZoom(15);
+  };
+
+  const resetCenter = () => {
+    setCenter({ lat: 51.5072178, lng: -0.1275862 });
+    setZoom(12);
   };
 
   const onLoad = (marker) => {
@@ -216,11 +229,13 @@ function Map(props) {
 
   return (
     <div>
+      <button onClick={handleCenter}>Test</button>
+      <button onClick={resetCenter}>Reset</button>
       <LoadScript googleMapsApiKey="AIzaSyCJu0aTsRYKOQVPsETLeTvI84jxDZjRGAg">
         <GoogleMap
           mapContainerStyle={mapContainerStyle}
           center={center}
-          zoom={12}
+          zoom={zoom}
           options={{ styles: lightTheme }}
         >
           {props.locations.map((location, index) => (

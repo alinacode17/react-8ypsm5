@@ -9,8 +9,6 @@ const Calendar = (props) => {
   );
   const [selectedDate, setSelectedDate] = useState(null);
 
-  //test icon
-
   useEffect(() => {
     setCurrentWeek(
       moment(props.firstAppointmentDate).startOf('week').day('Monday')

@@ -66,3 +66,32 @@ p {
   text-align: center;
   padding: 10px 0;
 }
+
+@media only screen and (max-width: 600px) {
+  .next,
+  .previous {
+    margin: 0 5px;
+  }
+
+  .date,
+  .slots {
+    width: 35px;
+    max-width: 35px;
+    font-size: 12px;
+  }
+
+  .day {
+    padding: 0 2px;
+  }
+
+  .next,
+  .previous {
+    margin: 0 0px;
+    width: 3px;
+    font-size: 9px;
+  }
+
+  .slot-time {
+    margin: 5px 0;
+  }
+}

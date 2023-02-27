@@ -134,7 +134,7 @@ const App = () => {
           </div>
           <div>Consulant registration number: GM123456789</div>
           <h2>Availability</h2>
-          <Map locations={data?.availability} />
+          {/* <Map locations={data?.availability} /> */}
           {data?.availability &&
             data?.availability.length > 0 &&
             data?.availability.map((facility) => (

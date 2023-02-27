@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import uuid from 'react-uuid';
 
@@ -182,6 +182,7 @@ const lightTheme = [
 function Map(props) {
   const [center, setCenter] = useState({ lat: 51.5072178, lng: -0.1275862 });
   const [zoom, setZoom] = useState(12);
+  const map = useRef(null);
 
   const mapContainerStyle = {
     width: '600px',
@@ -197,6 +198,8 @@ function Map(props) {
   const handleCenter = () => {
     setCenter({ lat: 51.6429219, lng: -0.3144919 });
     setZoom(15);
+    console.log('map current', map.current);
+    // map.current.panTo({ lat: 51.6429219, lng: -0.3144919 });
   };
 
   const resetCenter = () => {
@@ -233,6 +236,7 @@ function Map(props) {
       <button onClick={resetCenter}>Reset</button>
       <LoadScript googleMapsApiKey="AIzaSyCJu0aTsRYKOQVPsETLeTvI84jxDZjRGAg">
         <GoogleMap
+          ref={map}
           mapContainerStyle={mapContainerStyle}
           center={center}
           zoom={zoom}

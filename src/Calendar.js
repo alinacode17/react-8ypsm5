@@ -152,7 +152,7 @@ const Calendar = (props) => {
         className="previous"
         disabled={props.disablePreviousWeek ? true : false}
       >
-        Previous Week
+        {'<'}
       </button>
       <div className="week-container">
         {/* week header */}
@@ -226,7 +226,7 @@ const Calendar = (props) => {
         className="next"
         disabled={props.disableNextWeek ? true : false}
       >
-        Next Week
+        {'>'}
       </button>
     </div>
   );
